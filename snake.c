@@ -67,15 +67,7 @@ void *displaySubThread(void* snakeAndMapArr){
 		clean(snake);
         move(snake);
         eat(snake,map);
-        gotoxy(20,21);
-        printf("d1");
         display(snake);
-        gotoxy(20,22);
-        printf("d2");
-        gotoxy(20,21);
-        printf("  ");
-        gotoxy(20,22);
-        printf("  ");
 		usleep(150 * 1000);
 	}
 }
