@@ -1,9 +1,8 @@
 #ifndef _SNAKE_H_
 #define _SNAKE_H_
-
 #define SNAKE_HEAD '@'
 #define SNAKE_BODY '*'
-
+#define FOOD_ICON  'O'
 #define SNAKE_DIRECTION_UP  1
 #define SNAKE_DIRECTION_DOWN  2
 #define SNAKE_DIRECTION_LEFT  3
@@ -35,13 +34,12 @@ struct snake{
 
 typedef struct food *Food;
 struct food{
-	char f;
+	char icon;
 };
 
-
+int snakePosX(Snake snake);
+int snakePosY(Snake snake);
 Snake initSnake(int size);
-
-void eat(Snake snake, Food food);
 
 void move(Snake snake);
 

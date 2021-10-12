@@ -1,0 +1,110 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Body	header/snake.h	/^typedef struct body *Body;$/;"	kind:t	line:15	typeref:struct:body
+FOOD_ICON	header/snake.h	5;"	kind:d	line:5
+Food	header/snake.h	/^typedef struct food *Food;$/;"	kind:t	line:35	typeref:struct:food
+GCC	makefile	/^GCC:=gcc$/;"	kind:m	line:2
+HIDE_CURSOR	snake.c	10;"	kind:d	line:10	file:
+I	makefile	/^I:=-I .\/header\/$/;"	kind:m	line:3
+MAKE	makefile	/^MAKE:=make$/;"	kind:m	line:4
+MAP_BLANK	header/map.h	5;"	kind:d	line:5
+MAP_WALL	header/map.h	4;"	kind:d	line:4
+MULTI_THREAD	makefile	/^MULTI_THREAD:= -lpthread$/;"	kind:m	line:6
+Map	header/map.h	/^typedef struct  map* Map;$/;"	kind:t	line:16	typeref:struct:map
+MapEntry	header/map.h	/^typedef struct mapEntry* MapEntry;$/;"	kind:t	line:7	typeref:struct:mapEntry
+RM	makefile	/^RM:=rm$/;"	kind:m	line:5
+SHOW_CURSOR	snake.c	11;"	kind:d	line:11	file:
+SNAKE_BODY	header/snake.h	4;"	kind:d	line:4
+SNAKE_DIRECTION_DOWN	header/snake.h	7;"	kind:d	line:7
+SNAKE_DIRECTION_LEFT	header/snake.h	8;"	kind:d	line:8
+SNAKE_DIRECTION_RIGHT	header/snake.h	9;"	kind:d	line:9
+SNAKE_DIRECTION_UP	header/snake.h	6;"	kind:d	line:6
+SNAKE_HEAD	header/snake.h	3;"	kind:d	line:3
+SNAKE_INIT_POS_X	header/snake.h	11;"	kind:d	line:11
+SNAKE_INIT_POS_Y	header/snake.h	12;"	kind:d	line:12
+Snake	header/snake.h	/^typedef struct snake *Snake;$/;"	kind:t	line:26	typeref:struct:snake
+_MAP_H_	header/map.h	2;"	kind:d	line:2
+_SNAKE_DISPLAY_H	header/snakeDisplay.h	2;"	kind:d	line:2
+_SNAKE_H_	header/snake.h	2;"	kind:d	line:2
+_UTIL_H_	header/util.h	2;"	kind:d	line:2
+addToHead	header/snake.h	/^void addToHead(Snake snake,Body head);$/;"	kind:p	line:48	signature:(Snake snake,Body head)
+addToHead	snake.c	/^void addToHead(Snake snake,Body head){$/;"	kind:f	line:162	signature:(Snake snake,Body head)
+body	header/snake.h	/^struct body{$/;"	kind:s	line:17
+body::icon	header/snake.h	/^	char icon;$/;"	kind:m	line:20	struct:body	access:public
+body::next	header/snake.h	/^	Body next;$/;"	kind:m	line:21	struct:body	access:public
+body::posX	header/snake.h	/^	char posX;$/;"	kind:m	line:18	struct:body	access:public
+body::posY	header/snake.h	/^	char posY;$/;"	kind:m	line:19	struct:body	access:public
+body::previous	header/snake.h	/^	Body previous;$/;"	kind:m	line:22	struct:body	access:public
+clean	header/snakeDisplay.h	/^void clean(Snake snake);$/;"	kind:p	line:8	signature:(Snake snake)
+clean	snakeDisplay.c	/^void clean(Snake snake){$/;"	kind:f	line:27	signature:(Snake snake)
+direction	header/snake.h	/^	char direction;$/;"	kind:m	line:31	struct:snake	access:public
+display	header/snakeDisplay.h	/^void display(Snake snake);$/;"	kind:p	line:7	signature:(Snake snake)
+display	snakeDisplay.c	/^void display(Snake snake){$/;"	kind:f	line:10	signature:(Snake snake)
+displaySubThread	snake.c	/^void *displaySubThread(void* snakeAndMapArr){$/;"	kind:f	line:63	signature:(void* snakeAndMapArr)
+displaySubThread	snake.c	/^void *displaySubThread(void* snakeAndParamArr);$/;"	kind:p	line:13	file:	signature:(void* snakeAndParamArr)
+eat	snake.c	/^void eat(Snake snake, Map map){$/;"	kind:f	line:99	signature:(Snake snake, Map map)
+eat	snake.c	/^void eat(Snake snake,Map map);$/;"	kind:p	line:14	file:	signature:(Snake snake,Map map)
+enrichMap	header/map.h	/^void enrichMap(Map map);$/;"	kind:p	line:26	signature:(Map map)
+enrichMap	map.c	/^void enrichMap(Map map){$/;"	kind:f	line:33	signature:(Map map)
+food	header/map.h	/^    Food food;$/;"	kind:m	line:12	struct:mapEntry	access:public
+food	header/snake.h	/^struct food{$/;"	kind:s	line:36
+food::icon	header/snake.h	/^	char icon;$/;"	kind:m	line:37	struct:food	access:public
+generateFoodRandom	header/map.h	/^void generateFoodRandom(Map map,int maxX,int maxY);$/;"	kind:p	line:33	signature:(Map map,int maxX,int maxY)
+generateFoodRandom	map.c	/^void generateFoodRandom(Map map, int maxX, int maxY){$/;"	kind:f	line:54	signature:(Map map, int maxX, int maxY)
+getEntry	header/map.h	/^MapEntry getEntry(Map map,int x, int y);$/;"	kind:p	line:30	signature:(Map map,int x, int y)
+getEntry	map.c	/^MapEntry getEntry(Map map,int x,int y){$/;"	kind:f	line:29	signature:(Map map,int x,int y)
+gotoxy	header/util.h	/^void gotoxy(int x,int y);$/;"	kind:p	line:4	signature:(int x,int y)
+gotoxy	util.c	/^void gotoxy(int x, int y){$/;"	kind:f	line:7	signature:(int x, int y)
+head	header/snake.h	/^	Body head;$/;"	kind:m	line:29	struct:snake	access:public
+icon	header/map.h	/^    char icon;$/;"	kind:m	line:11	struct:mapEntry	access:public
+icon	header/snake.h	/^	char icon;$/;"	kind:m	line:20	struct:body	access:public
+icon	header/snake.h	/^	char icon;$/;"	kind:m	line:37	struct:food	access:public
+initMap	header/map.h	/^Map initMap(int sizeX,int sizeY);$/;"	kind:p	line:24	signature:(int sizeX,int sizeY)
+initMap	map.c	/^Map initMap(int sizeX,int sizeY){$/;"	kind:f	line:7	signature:(int sizeX,int sizeY)
+initSnake	header/snake.h	/^Snake initSnake(int size);$/;"	kind:p	line:42	signature:(int size)
+initSnake	snake.c	/^Snake initSnake(int size){$/;"	kind:f	line:84	signature:(int size)
+isBorderLine	header/map.h	/^    char isBorderLine;$/;"	kind:m	line:13	struct:mapEntry	access:public
+isBorderLine	map.c	/^char isBorderLine(Map map,int x, int y){$/;"	kind:f	line:16	signature:(Map map,int x, int y)
+kbhit	header/util.h	/^int kbhit(void);$/;"	kind:p	line:6	signature:(void)
+kbhit	util.c	/^int kbhit(void){$/;"	kind:f	line:13	signature:(void)
+main	snake.c	/^int main(int argc, char* argv[]){$/;"	kind:f	line:17	signature:(int argc, char* argv[])
+map	header/map.h	/^struct map{$/;"	kind:s	line:18
+map::mapEntrys	header/map.h	/^	MapEntry *mapEntrys; \/\/用一位数组模拟二维数组$/;"	kind:m	line:21	struct:map	access:public
+map::sizeX	header/map.h	/^	int sizeX;$/;"	kind:m	line:19	struct:map	access:public
+map::sizeY	header/map.h	/^	int sizeY;$/;"	kind:m	line:20	struct:map	access:public
+mapEntry	header/map.h	/^struct mapEntry{$/;"	kind:s	line:8
+mapEntry::food	header/map.h	/^    Food food;$/;"	kind:m	line:12	struct:mapEntry	access:public
+mapEntry::icon	header/map.h	/^    char icon;$/;"	kind:m	line:11	struct:mapEntry	access:public
+mapEntry::isBorderLine	header/map.h	/^    char isBorderLine;$/;"	kind:m	line:13	struct:mapEntry	access:public
+mapEntry::posX	header/map.h	/^    char posX;$/;"	kind:m	line:9	struct:mapEntry	access:public
+mapEntry::posY	header/map.h	/^    char posY;$/;"	kind:m	line:10	struct:mapEntry	access:public
+mapEntrys	header/map.h	/^	MapEntry *mapEntrys; \/\/用一位数组模拟二维数组$/;"	kind:m	line:21	struct:map	access:public
+move	header/snake.h	/^void move(Snake snake);$/;"	kind:p	line:44	signature:(Snake snake)
+move	snake.c	/^void move(Snake snake){$/;"	kind:f	line:126	signature:(Snake snake)
+next	header/snake.h	/^	Body next;$/;"	kind:m	line:21	struct:body	access:public
+popTail	header/snake.h	/^Body popTail(Snake snake);$/;"	kind:p	line:46	signature:(Snake snake)
+popTail	snake.c	/^Body popTail(Snake snake){$/;"	kind:f	line:146	signature:(Snake snake)
+posX	header/map.h	/^    char posX;$/;"	kind:m	line:9	struct:mapEntry	access:public
+posX	header/snake.h	/^	char posX;$/;"	kind:m	line:18	struct:body	access:public
+posY	header/map.h	/^    char posY;$/;"	kind:m	line:10	struct:mapEntry	access:public
+posY	header/snake.h	/^	char posY;$/;"	kind:m	line:19	struct:body	access:public
+previous	header/snake.h	/^	Body previous;$/;"	kind:m	line:22	struct:body	access:public
+printMap	header/map.h	/^void printMap(Map map);$/;"	kind:p	line:28	signature:(Map map)
+printMap	map.c	/^void printMap(Map map){$/;"	kind:f	line:65	signature:(Map map)
+random	header/util.h	3;"	kind:d	line:3
+sizeX	header/map.h	/^	int sizeX;$/;"	kind:m	line:19	struct:map	access:public
+sizeY	header/map.h	/^	int sizeY;$/;"	kind:m	line:20	struct:map	access:public
+snake	header/snake.h	/^struct snake{$/;"	kind:s	line:28
+snake::direction	header/snake.h	/^	char direction;$/;"	kind:m	line:31	struct:snake	access:public
+snake::head	header/snake.h	/^	Body head;$/;"	kind:m	line:29	struct:snake	access:public
+snake::tail	header/snake.h	/^	Body tail;$/;"	kind:m	line:30	struct:snake	access:public
+snakeLock	snake.c	/^pthread_mutex_t snakeLock;$/;"	kind:v	line:15
+snakePosX	header/snake.h	/^int snakePosX(Snake snake);$/;"	kind:p	line:40	signature:(Snake snake)
+snakePosX	snake.c	/^int snakePosX(Snake snake){$/;"	kind:f	line:118	signature:(Snake snake)
+snakePosY	header/snake.h	/^int snakePosY(Snake snake);$/;"	kind:p	line:41	signature:(Snake snake)
+snakePosY	snake.c	/^int snakePosY(Snake snake){$/;"	kind:f	line:122	signature:(Snake snake)
+tail	header/snake.h	/^	Body tail;$/;"	kind:m	line:30	struct:snake	access:public

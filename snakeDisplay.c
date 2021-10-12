@@ -11,6 +11,7 @@ void display(Snake snake){
 	
 	Body body = snake->head;
 	while(1){
+        if(body == NULL || body->posX < 0)break;
 		gotoxy(body->posX,body->posY);
 		printf("%c",body->icon);
 		fflush(stdout);
@@ -27,11 +28,11 @@ void clean(Snake snake){
 
         Body body = snake->head;
         while(1){
+               if(body==NULL||body->posX < 0)break;
                gotoxy(body->posX,body->posY);
                printf("%c",MAP_BLANK);
-	       fflush(stdout);
+	           fflush(stdout);
                if(body == snake->tail) break;
 	       body = body->next;
-	       sleep(5);
         }
 }

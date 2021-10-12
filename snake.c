@@ -10,21 +10,28 @@
 #define HIDE_CURSOR() printf("\033[?25l")
 #define SHOW_CURSOR() printf("\033[?25h")
 
-void *displaySubThread(void* snake);
-
+void *displaySubThread(void* snakeAndParamArr);
+void eat(Snake snake,Map map);
+pthread_mutex_t snakeLock;
 
 int main(int argc, char* argv[]){
 	
 	
 	HIDE_CURSOR();
 	int sizeX = 100;
-	int sizeY = 60;
+	int sizeY = 30;
 	Map map = initMap(sizeX,sizeY);
-	enrichMap(map);
+    enrichMap(map);
 	printMap( map);
-	Snake snake = initSnake(1);
+
+    generateFoodRandom(map,10,15);
+
+    Snake snake = initSnake(1);
 	pthread_t displayTread;
-	pthread_create(&displayTread,NULL, (void*)displaySubThread,snake);
+    int ** snakeAndMapArr = (int**) malloc(sizeof(*snakeAndMapArr)*2);
+    snakeAndMapArr[0] = snake;
+    snakeAndMapArr[1] = map;
+	pthread_create(&displayTread,NULL, (void*)displaySubThread,snakeAndMapArr);
 	fflush(stdout);
 	char c;
 	while(1){
@@ -53,15 +60,24 @@ int main(int argc, char* argv[]){
 
 
 
-void *displaySubThread(void* snake){
-
+void *displaySubThread(void* snakeAndMapArr){
+    Snake snake = ((Snake**)snakeAndMapArr)[0];
+    Map map = ((Map**)snakeAndMapArr)[1];
 	while(1){
 		clean(snake);
-		move(snake);
-		display(snake);
+        move(snake);
+        eat(snake,map);
+        gotoxy(20,21);
+        printf("d1");
+        display(snake);
+        gotoxy(20,22);
+        printf("d2");
+        gotoxy(20,21);
+        printf("  ");
+        gotoxy(20,22);
+        printf("  ");
 		usleep(150 * 1000);
 	}
-
 }
 
 
@@ -80,14 +96,31 @@ Snake initSnake(int size){
 	return snake;
 }
 
-void eat(Snake snake, Food food){
-	Body body = (Body) malloc(sizeof(*body));
+void eat(Snake snake, Map map){
+    MapEntry currentEntry = getEntry(map,snakePosX(snake),snakePosY(snake));
+    Food food = currentEntry->food;
+    if(food == NULL){
+            return;
+    }
+    currentEntry->food = NULL;
+    free(food);
+    generateFoodRandom(map,map->sizeX,map->sizeY);
+    Body body = (Body) malloc(sizeof(*body));
 	body->posX = -1;
 	body->posY = -1;
 	snake->tail->next = body;
-	body->previous = snake->tail;
-	snake->tail = body;
+    body->previous = snake->tail;
+    snake->tail = body;
+    snake->tail->next = snake->head;    
+}
 
+
+int snakePosX(Snake snake){
+    return snake->head->posX;
+}
+
+int snakePosY(Snake snake){
+    return snake->head->posY;
 }
 
 void move(Snake snake){
