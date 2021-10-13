@@ -6,32 +6,51 @@
 #include "snakeDisplay.h"
 #include "util.h"
 #include <pthread.h>
-
+#include "myPool.h"
 #define HIDE_CURSOR() printf("\033[?25l")
 #define SHOW_CURSOR() printf("\033[?25h")
 
-void *displaySubThread(void* snakeAndParamArr);
+void *displaySubThread(void** snakeAndParamArr);
 void eat(Snake snake,Map map);
 pthread_mutex_t snakeLock;
 
+
+
+MyPool bodyPool;
+MyPool foodPool;
+
+void initPool(){
+	initBodyPool(bodyPool,100);
+
+}
+
+
 int main(int argc, char* argv[]){
 	
+	printf("sefsf");
 	
+	initPool();
+
+	printf("sefsf");
+//	void * p = getPoolEntry(bodyPool);
+
 	HIDE_CURSOR();
 	int sizeX = 100;
 	int sizeY = 30;
 	Map map = initMap(sizeX,sizeY);
-    enrichMap(map);
+    	enrichMap(map);
 	printMap( map);
 
-    generateFoodRandom(map,10,15);
+    	generateFoodRandom(map,10,15);
 
-    Snake snake = initSnake(1);
+    	Snake snake = initSnake(1);
 	pthread_t displayTread;
-    int ** snakeAndMapArr = (int**) malloc(sizeof(*snakeAndMapArr)*2);
-    snakeAndMapArr[0] = snake;
-    snakeAndMapArr[1] = map;
+    	void ** snakeAndMapArr = (void **) malloc(sizeof(*snakeAndMapArr)*2);
+	snakeAndMapArr[0] = snake;
+    	snakeAndMapArr[1] = map;
+	
 	pthread_create(&displayTread,NULL, (void*)displaySubThread,snakeAndMapArr);
+	
 	fflush(stdout);
 	char c;
 	while(1){
@@ -60,9 +79,9 @@ int main(int argc, char* argv[]){
 
 
 
-void *displaySubThread(void* snakeAndMapArr){
-    Snake snake = ((Snake**)snakeAndMapArr)[0];
-    Map map = ((Map**)snakeAndMapArr)[1];
+void *displaySubThread(void** snakeAndMapArr){
+    Snake snake = ((Snake*)snakeAndMapArr)[0];
+    Map map = ((Map*)snakeAndMapArr)[1];
 	while(1){
 		clean(snake);
         move(snake);
