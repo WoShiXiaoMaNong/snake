@@ -3,14 +3,13 @@
 #include <stdlib.h>
 #include "util.h"
 #include "snake.h"
-
+#include <time.h>
 Map initMap(int sizeX,int sizeY){
 	Map map = (Map)malloc(sizeof(*map));
 	map->sizeX = sizeX;
 	map->sizeY = sizeY;
 	MapEntry *entrys = (MapEntry*)malloc(sizeof(*entrys) * sizeX * sizeY);
     map->mapEntrys = entrys;
-
 }
 
 char isBorderLine(Map map,int x, int y){

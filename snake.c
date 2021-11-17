@@ -27,11 +27,6 @@ void initPool(){
 
 int main(int argc, char* argv[]){
 	
-	printf("sefsf");
-	
-	initPool();
-
-	printf("sefsf");
 //	void * p = getPoolEntry(bodyPool);
 
 	HIDE_CURSOR();
